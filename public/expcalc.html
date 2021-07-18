@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="expcalc.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="expcalc.scss"> -->
+    
+    <title>SAVEKARO |EXPENSE CALCULATOR</title>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container-fluid">
+      <span class="navbar-brand h1 text-gray-900 ml-3 mt-4 p-2"><a class="link no-underline text-gray-900 tracking-widest font-bold" href="homepage.html">SAVEKARO</a></span>
+    </div>
+  </nav>
+    <div class="maintab mt-10 py-12">
+    <div class="tab mx-auto ">
+        <button class="tablinks" id="esentials" onclick="openTab(event, 'Monthlyexp')">Essentials</button>
+        <button class="tablinks"  onclick="openTab(event, 'Dailyexp')">Wants</button>
+      </div>
+    
+      <div id="Monthlyexp" class="tabcontent">
+        <!----Essentials-->
+        <div class="form-div px-5 py-5 ">
+        <form >  
+            <div class="range-slider">
+                <label for="range">Rent: </label>
+                   <input type="range" min="0" max="50000" value="0" class="slider" id="slider1">
+                     <p>Value: Rs <span id="range-slider__value"></span></p>
+                   </div>
+                   <div class="range-slider">
+                   <label for="range">Utilities: </label>
+                     <input type="range" min="0" max="50000" value="0" class="slider" id="slider2">
+                     <p>Value: Rs <span id="range-slider__value"></span></p>
+                   </div>
+                   
+                   <div class="range-slider">
+                   <label for="range">Education: </label>
+                     <input type="range" min="0" max="50000" value="0" class="slider" id="slider3">
+                     <p>Value: Rs <span id="range-slider__value"></span></p>
+                   </div>
+                   
+                   <div class="range-slider">
+                   <label for="range">Health: </label>
+                     <input type="range" min="0" max="50000" value="0" class="slider" id="slider4">
+                     <p>Value: Rs <span id="range-slider__value"></span></p>
+                   </div>      
+                   <button class="py-1 px-4 mt-4 ml-10 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700 proceed-btn" onclick="getData()">
+                    <a class="btn text-white" href="#Dailyexp">Move to wants</a>
+                  </button>
+          </form>
+          </div>
+      </div>
+      
+
+    <div id="Dailyexp" class="tabcontent">
+<!-----------------Wants----------------------------->
+<div class="form-div px-5 py-5 ">
+  <form>  
+      <div class="range-slider">
+          <label for="range">Dining-out </label>
+             <input type="range" min="0" max="50000" value="0" class="slider" id="slider5">
+               <p>Value: Rs <span id="range-slider__value"></span></p>
+             </div>
+             <div class="range-slider">
+             <label for="range">Entertainment </label>
+               <input type="range" min="0" max="50000" value="0" class="slider" id="slider6">
+               <p>Value: Rs <span id="range-slider__value"></span></p>
+             </div>
+             
+             <div class="range-slider">
+             <label for="range">Apparals </label>
+               <input type="range" min="0" max="50000" value="0" class="slider" id="slider7">
+               <p>Value: Rs <span id="range-slider__value"></span></p>
+             </div>
+             
+             <div class="range-slider">
+             <label for="range">Shopping </label>
+               <input type="range" min="0" max="50000" value="0" class="slider" id="slider8">
+               <p>Value: Rs <span id="range-slider__value"></span></p>
+             </div>      
+             <button class="py-1 px-4 mt-4 ml-10 font-semibold rounded-lg shadow-md text-white bg-green-500 hover:bg-green-700 proceed-btn" onclick="getData()">
+              <a class="btn text-white" href="index.html" >Proceed</a>
+            </button>
+    </form>
+    </div>
+    </div>
+    </div>
+
+    
+<script>
+   //Tabs JS
+   var showDiv = function(id){
+var element = document.getElementById(id);
+element.classList.remove('displayNone')
+} 
+
+   function openTab(evt, tabName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }    
+</script>
+      
+   
+    
+
+<script src="expcalc.js"></script>
+
+
+</body>
+
+</html>
