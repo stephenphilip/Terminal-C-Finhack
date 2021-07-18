@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "tailwindcss": "^2.2.4"
+  },
+  "name": "terminal-c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "build:css": "tailwind build src/style.css -o public/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
